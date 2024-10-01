@@ -1,8 +1,11 @@
-// const lib = require('./lib.js')
+const lib = require("./lib.js");
 
-import {sum,diff} from './lib.js'
+// import {sum,diff} from './lib.js'
+const fs = require("fs");
 
-console.log(sum(4,5),diff(3,6))
+const txt = fs.readFileSync('demo.txt','utf-8')
+console.log(txt)
+
+console.log(lib.sum(4, 5), lib.diff(3, 6));
 
 const a = 5;
-
