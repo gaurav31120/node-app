@@ -1,0 +1,5 @@
+npm init 
+To initiize nide package-json
+
+npm init -y 
+To initiize nide package-json ---- every will set by default
