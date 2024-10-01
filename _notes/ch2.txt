@@ -1,0 +1,73 @@
+Ch 2 : Web Server using Node JS
+
+1. client- server comm ---- 2 way comm
+client request bhejta hai to server jawab deta hai
+
+Browser -------request (req)-------> web server
+        <------response (res) ------
+                  |
+                  |
+                  |
+                  V
+             HTTP Protocol
+
+2. HTTP Protocol ---- web server ka language hai HTTP protocol. req and res dono format http protocol me likhe hote hain.
+
+3. HTTP REQUEST  --- It contains following:
+                     _________________
+                    |                 |
+                    |   REQUEST LINE  |
+                    |  ------------   |
+                    |     HEADERS
+                    |   -----------   |
+                    |  ------------   |
+                    |  ------------   |  
+                    |  ------------   |
+                    |      BODY
+                    |  ------------   |
+                    |   ------------  |
+                    |_________________|
+
+* REQUEST LINE ---- kis type ka msg hai like ----GET POST PUT DELETE PATCH
+server ke path ka bhi refence de sakte hain. Request line se hi pata chalta hai ki server ko kya chahiye.
+
+* HEADERS ---- additional data
+kis browser se call kiya hai server ko 
+kaun se lang me chal raha hai
+login info 
+browser bhej deta hai humko kuch nhi karna hota hai 
+
+* BODY ---- ye info jo hum bhejte hain like login password info 
+
+4. HTTP RESPONSE  --- It contains following:
+                     _________________
+                    |                 |
+                    |   STATUS LINE  |
+                    |  ------------   |
+                    |     HEADERS
+                    |   -----------   |
+                    |  ------------   |
+                    |  ------------   |  
+                    |  ------------   |
+                    |      BODY
+                    |  ------------   |
+                    |   ------------  |
+                    |_________________|
+
+STATUS LINE ---server batata hai ki aapki request ka kya hua like 200, 404,500
+
+* HEADERS ---- server ki extra info like 
+server ka name
+content type
+content-length
+expires  
+
+* BODY ---- content ka data ---- html ka data (html code)
+
+5. RESPONSE STATUS
+
+2XX (SUCCESS)      ---- 200 OK                 201 CREATED    202 ACCEPTED
+3XX (REDIRECTIONS) ---- 301 MOVED PERMANENTLY  302 FOUND
+4XX (CLIENT ERROR) ---- 400 BAD REQUEST        401 UNAUTHORIZED  403 FORBIDDEN
+                        404 NOT FOUND          405 METHOD NOT ALLOWED
+5XX (SERVER ERROR) ---- 500 INTERNAL SERVER ERROR  502 BAD GATEWAY

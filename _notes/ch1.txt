@@ -1,3 +1,5 @@
+Ch 1 - Modules System, FS, REPL, NPM, Package.json
+
 1. Node js me har chiz asynchronous hoti hai.
 
 2. to create package-json ---- npm init
@@ -14,3 +16,8 @@
     ^ ---- if you use this sign ^ it means that yoy are allowing the system to accept any minor updates (2nd number) in the future like from 4.21.0 to 4.28.0
     * ---- if you use this sign * it means that yoy are allowing the system to accept any major updates (1st number) in the future like from 4.21.0 to 5.21.0
     ~ ---- if you use this sign ~ it means that yoy are allowing the system to accept any minor updates (2nd number) in the future like from 4.21.0 to 4.21.6
+
+
+
+
+
