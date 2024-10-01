@@ -1,5 +1,33 @@
-npm init 
+1. npm init 
 To initiize nide package-json
 
-npm init -y 
+2. npm init -y 
 To initiize nide package-json ---- every will set by default
+
+3. Call back function
+
+functionName(() => {})
+
+http.createServer((re, res) => {
+  console.log("server started");
+});
+
+4. varName.listen(8080) ----> server network ka ye post (8080) ko listen kar raha hoga
+e.g.>
+http.createServer((req, res) => {
+  console.log("server started");
+});
+server.listen(8080)
+
+Need to know -- 5. res.end() ----> 
+res.end('Dummy', 'DummyValue')
+
+6. Creating new HEADERS
+res.setHeader('Dummy', 'DummyValue')
+
+7. JSON.stringify(data)
+to convert data into string type
+
+8. res.setHeader('Content-Type','application/json')
+change content type in header
+
