@@ -1,4 +1,21 @@
 const lib = require("./lib.js");
+const express = require("express");
+
+console.log('hello world')
+
+
+const server = express()
+server.listen(8080)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -16,7 +33,6 @@ const lib = require("./lib.js");
 
 // import {sum,diff} from './lib.js'
 // const fs = require("fs");
-
 
 // const t1 = performance.now()
 // const txt = fs.readFileSync('demo.txt','utf-8') // synchronous

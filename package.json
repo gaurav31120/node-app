@@ -4,11 +4,16 @@
   "description": "a example of node",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gaurav",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

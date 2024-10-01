@@ -1,3 +1,16 @@
 1. Node js me har chiz asynchronous hoti hai.
 
 2. to create package-json ---- npm init
+
+3. node par jab normal js chalta hai tab wo chal ke band ho jata hai but server continuous chalte rahta hai, server band nahi hota hai
+---- is problem ko solve karta hai express
+
+4. version sogns difference
+    "express": "^4.21.0" ---- 
+    here 4 (1st number) is used for major update
+    here 21 (2nd number) is used for minor update
+    here 0 (3rd number) is used for patch update ---- for bugs
+
+    ^ ---- if you use this sign ^ it means that yoy are allowing the system to accept any minor updates (2nd number) in the future like from 4.21.0 to 4.28.0
+    * ---- if you use this sign * it means that yoy are allowing the system to accept any major updates (1st number) in the future like from 4.21.0 to 5.21.0
+    ~ ---- if you use this sign ~ it means that yoy are allowing the system to accept any minor updates (2nd number) in the future like from 4.21.0 to 4.21.6
