@@ -31,3 +31,37 @@ to convert data into string type
 8. res.setHeader('Content-Type','application/json')
 change content type in header
 
+9. const express = require('express')
+to import express
+
+10. express HTTP request
+server.get('/',(req,res)=>{})
+
+here, get is the HTTP request and '/' inside the bracket is the path and there is  a callback.
+
+11. RESPONSE properties
+res.send('hello')  ----> shows the response
+
+12. res.sendFile('D:\NodeJS\node-app\index.html')
+shows file response
+
+13. res.json(products)
+shows json data
+
+14. res.sendStatus(404)
+sends the status you want
+
+15. res.status(201).send('<h1>hello</h1>')
+can send status alongwith the output
+
+16. writing middlewares
+server.use((req,res,next)=>{
+    console.log(req.method, req.ip, req.hostname)
+    next()
+})
+
+next() is used to pass to show the response
+
+isko logger keh sakte hain ---- info deta hai
+
+17.
