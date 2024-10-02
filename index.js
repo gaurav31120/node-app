@@ -9,6 +9,15 @@ const express = require("express");
 
 const server = express();
 
+//express.json middleware
+//bodyParser
+server.use(express.json());
+//urlencodedParser
+// server.use(express.urlencoded());
+
+// static middleware
+server.use(express.static("public"));
+
 //writing middlewares
 server.use((req, res, next) => {
   console.log(
@@ -22,8 +31,8 @@ server.use((req, res, next) => {
 });
 
 const auth = (req, res, next) => {
-  console.log(req.query);
-  if (req.query.password=='123') {
+  //   console.log(req.query);
+  if (req.body.password == "123") {
     next();
   } else {
     res.sendStatus(401);
@@ -32,10 +41,10 @@ const auth = (req, res, next) => {
 // server.use(auth); // middleware path par lagana chahiye
 
 // API - Endpoint - Route
-server.get("/",auth, (req, res) => {
+server.get("/", auth, (req, res) => {
   res.json({ type: "GET" });
 });
-server.post("/", auth,(req, res) => {
+server.post("/", auth, (req, res) => {
   res.json({ type: "POST" });
 });
 server.put("/", (req, res) => {

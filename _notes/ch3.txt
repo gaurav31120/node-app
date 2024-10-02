@@ -33,4 +33,5 @@ next() is used to pass to show the response
 
 isko logger keh sakte hain ---- info deta hai
 
-9.
+9.static hosting me ---- path - '/' index.html ka hota hai by default.
+
