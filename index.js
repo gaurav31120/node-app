@@ -6,7 +6,7 @@ const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 const products = data.products;
 
 const express = require("express");
-const morgan = require('morgan')
+const morgan = require("morgan");
 
 const server = express();
 
@@ -15,12 +15,10 @@ const server = express();
 server.use(express.json());
 //urlencodedParser
 // server.use(express.urlencoded());
-server.use(morgan('dev'))
+server.use(morgan("default"));
 
 // static middleware
 server.use(express.static("public"));
-
-
 
 //writing middlewares
 // server.use((req, res, next) => {
@@ -45,21 +43,77 @@ const auth = (req, res, next) => {
 // server.use(auth); // middleware path par lagana chahiye
 
 // API - Endpoint - Route
-server.get("/", auth, (req, res) => {
-  res.json({ type: "GET" });
+
+// Products
+// API root , base url, google.com/api/v2
+// C R U D -----
+
+//Create POST /products
+server.post("/products", (req, res) => {
+  console.log(req.body);
+  products.push(req.body);
+  res.status(201).json(req.body);
+  // res.json({ type: "POST" });
 });
-server.post("/", auth, (req, res) => {
-  res.json({ type: "POST" });
+
+// Read GET /products
+server.get("/products", (req, res) => {
+  res.json(products);
 });
-server.put("/", (req, res) => {
-  res.json({ type: "PUT" });
+
+// Read GET /products/:id
+server.get("/products/:id", (req, res) => {
+  const id = +req.params.id;
+  const product = products.find((p) => p.id === id);
+
+  res.json(product);
 });
-server.delete("/", (req, res) => {
-  res.json({ type: "DELETE" });
+
+// Update PUT /products/:id
+server.put("/products/:id", (req, res) => {
+  const id = +req.params.id;
+  const productIndex = products.findIndex((p) => p.id === id);
+  products.splice(productIndex, 1, { ...req.body, id: id });
+  // req.json(product);
+
+  res.status(201).json();
 });
-server.patch("/", (req, res) => {
-  res.json({ type: "PATCH" });
+
+// Update PATCH /products/:id
+server.patch("/products/:id", (req, res) => {
+  const id = +req.params.id;
+  const productIndex = products.findIndex((p) => p.id === id);
+  const product = products[productIndex]
+  products.splice(productIndex, 1, {...product, ...req.body});
+  // req.json(product);
+
+  res.status(201).json();
 });
+
+// Delete DELETE /products/:id
+server.delete("/products/:id", (req, res) => {
+  const id = +req.params.id;
+  const productIndex = products.findIndex((p) => p.id === id);
+  const product = products[productIndex]
+  products.splice(productIndex, 1);
+  // req.json(product);
+
+  res.status(201).json(product);
+});
+
+// server.post("/", (req, res) => {
+//   res.json({ type: "POST" });
+// });
+
+// server.put("/", (req, res) => {
+//   res.json({ type: "PUT" });
+// });
+// server.delete("/", (req, res) => {
+//   res.json({ type: "DELETE" });
+// });
+// server.patch("/", (req, res) => {
+//   res.json({ type: "PATCH" });
+// });
 
 server.get("/", (req, res) => {
   //   res.sendStatus(404)
@@ -71,6 +125,9 @@ server.get("/", (req, res) => {
 server.listen(8080, () => {
   console.log("server started");
 });
+
+// ---------------------------------------------------------------------
+// ch1
 
 // const server = http.createServer((req, res) => {
 //   console.log(req.url);

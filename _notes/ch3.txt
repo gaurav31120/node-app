@@ -35,3 +35,8 @@ isko logger keh sakte hain ---- info deta hai
 
 9.static hosting me ---- path - '/' index.html ka hota hai by default.
 
+10. There are 2 ways to send data request:
+   1. REQUEST QUERY PARAMETER
+   2. REQUEST URL PARAMETER
+   3. INSIDE THE BODY 
+

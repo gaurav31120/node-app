@@ -1,0 +1,6 @@
+CRUD operations
+
+1. PUT ---- update
+PATCH ---- update only the give data
+PUT me data overrode ho jati hai but PATCH me jitna data hum update karte hain utna hi update hota hai baki 
+waise hi rahta hai.
